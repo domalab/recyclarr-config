@@ -1,0 +1,310 @@
+# For more details on the configuration, see the Configuration Reference on the wiki here:
+# https://github.com/recyclarr/recyclarr/wiki/Configuration-Reference
+
+# Configuration specific to Sonarr
+sonarr:
+  main:
+  # Set the URL/API Key to your actual instance
+    base_url: http://<Your IP>:8989
+    api_key: <Your API Key>
+
+    # Quality definitions from the guide to sync to Sonarr. Choice: anime, series, hybrid
+    quality_definition: 
+      type: series
+
+    # Release profiles from the guide to sync to Sonarr.
+    # You can optionally add tags and make negative scores strictly ignored
+    release_profiles:
+      # Series
+      - trash_ids:
+          - EBC725268D687D588A20CBC5F97E538B # Low Quality Groups
+          - 1B018E0C53EC825085DD911102E2CA36 # Release Sources (Streaming Service)
+          - 71899E6C303A07AF0E4746EFF9873532 # P2P Groups + Repack/Proper
+        tags: [tv]
+      # Anime (Uncomment below if you want it)
+      # - trash_ids:
+        #  - d428eda85af1df8904b4bbe4fc2f537c # Anime - First release profile
+        #  - 6cd9e10bb5bb4c63d2d7cd3279924c7b # Anime - Second release profile
+        # tags: [anime]
+
+# Configuration specific to Radarr.
+radarr:
+  # Set the URL/API Key to your actual instance
+  main:
+    base_url: http://<Your IP>:7878
+    api_key: <Your API Key>
+
+    # Which quality definition in the guide to sync to Radarr. Only choice right now is 'movie'
+    quality_definition:
+      type: movie
+
+    # Set to 'true' to automatically remove custom formats from Radarr when they are removed from
+    # the guide or your configuration. This will NEVER delete custom formats you manually created!
+    delete_old_custom_formats: true
+
+    custom_formats:
+      # A list of custom formats to sync to Radarr. Must match the "trash_id" in the guide JSON.
+      - trash_ids:
+        - b8cd450cbfa689c0259a01d9e29ba3d6 # 3D
+        - ed38b889b31be83fda192888e2286d83 # BR-DISK
+        - 90cedc1fea7ea5d11298bebd3d1d3223 # EVO (no WEBDL)
+        - 90a6f9a284dff5103f6346090e6280c8 # LQ
+        - ae9b7c9ebde1f3bd336a8cbd1ec4c5e5 # No-RlsGroup
+        - dc98083864ea246d05a42df0d05f81cc # x265 (720/1080p)
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: -100000
+          - name: 1080p - Cutoff WEB-DL
+            score: -100000
+          - name: Barnfilmer (1080p/2160p)
+            score: -100000
+          - name: 4K (2160p) - Cutoff Remux
+            score: -100000
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: -100000
+          - name: Standard (1080p/2160p)
+            score: -100000
+
+       # Optionally set other scores to 0 if they are not listed in 'names' above.
+       #     reset_unmatched_scores: false
+
+        # Custom formats with positive scores
+
+      - trash_ids:
+          - b974a6cd08c1066250f1f177d7aa1225 # HDR10+
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: -20000
+          - name: 1080p - Cutoff WEB-DL
+            score: -20000
+          - name: Barnfilmer (1080p/2160p)
+            score: -20000
+          - name: 4K (2160p) - Cutoff Remux
+            score: -20000
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: -20000
+          - name: Standard (1080p/2160p)
+            score: -20000
+      - trash_ids:
+          - dfb86d5941bc9075d6af23b09c2aeecd # HDR10
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 1500
+          - name: 1080p - Cutoff WEB-DL
+            score: 1500
+          - name: Barnfilmer (1080p/2160p)
+            score: 1500
+          - name: 4K (2160p) - Cutoff Remux
+            score: 1500
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 1500
+          - name: Standard (1080p/2160p)
+            score: 1500
+      - trash_ids:
+          - e61e28db95d22bedcadf030b8f156d96 # HDR
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 1400
+          - name: 1080p - Cutoff WEB-DL
+            score: 1400
+          - name: Barnfilmer (1080p/2160p)
+            score: 1400
+          - name: 4K (2160p) - Cutoff Remux
+            score: 1400
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 1400
+          - name: Standard (1080p/2160p)
+            score: 1400
+      - trash_ids:
+          - e23edd2482476e595fb990b12e7c609c # DV HDR10
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 1600
+          - name: 1080p - Cutoff WEB-DL
+            score: 1600
+          - name: Barnfilmer (1080p/2160p)
+            score: 1600
+          - name: 4K (2160p) - Cutoff Remux
+            score: 1600
+          - name: Standard (1080p/2160p)
+            score: 1600
+      - trash_ids:
+          - 58d6a88f13e2db7f5059c41047876f00 # DV
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 1700
+          - name: 1080p - Cutoff WEB-DL
+            score: 1700
+          - name: Barnfilmer (1080p/2160p)
+            score: 1700
+          - name: 4K (2160p) - Cutoff Remux
+            score: 1700
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 1700
+          - name: Standard (1080p/2160p)
+            score: 1700
+      - trash_ids:
+          - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 20000
+          - name: 1080p - Cutoff WEB-DL
+            score: 20000
+          - name: Barnfilmer (1080p/2160p)
+            score: 20000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 2000
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 2000                        
+          - name: Standard (1080p/2160p)
+            score: 20000
+      - trash_ids:
+          - 9f98181fe5a3fbeb0cc29340da2a468a # Remux Tier 02
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 15000
+          - name: 1080p - Cutoff WEB-DL
+            score: 15000
+          - name: Barnfilmer (1080p/2160p)
+            score: 15000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 15000
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 15000     
+          - name: Standard (1080p/2160p)
+            score: 15000
+      - trash_ids:
+          - c20f169ef63c5f40c2def54abaf4438e # WEB Tier 01
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 15000
+          - name: 1080p - Cutoff WEB-DL
+            score: 15000
+          - name: Barnfilmer (1080p/2160p)
+            score: 15000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 15000
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 15000
+          - name: Standard (1080p/2160p)
+            score: 15000
+      - trash_ids:
+          - 403816d65392c79236dcb6dd591aeda4 # WEB Tier 02
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 10000
+          - name: 1080p - Cutoff WEB-DL
+            score: 10000
+          - name: Barnfilmer (1080p/2160p)
+            score: 10000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 10000
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 10000
+          - name: Standard (1080p/2160p)
+            score: 10000        
+      - trash_ids:
+          - af94e0fe497124d1f9ce732069ec8c3b # WEB Tier 03
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 5000
+          - name: 1080p - Cutoff WEB-DL
+            score: 5000
+          - name: Barnfilmer (1080p/2160p)
+            score: 5000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 5000
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 5000
+          - name: Standard (1080p/2160p)
+            score: 5000
+      - trash_ids:
+          - e7718d7a3ce595f289bfee26adc178f5 # [Repack/Proper]
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 1000
+          - name: 1080p - Cutoff WEB-DL
+            score: 1000
+          - name: Barnfilmer (1080p/2160p)
+            score: 1000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 1000
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 1000                        
+          - name: Standard (1080p/2160p)
+            score: 1000
+      - trash_ids:
+          - 77ff61788dfe1097194fd8743d7b4524 # 5.1 Surround
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 100
+          - name: 1080p - Cutoff WEB-DL
+            score: 100
+          - name: Barnfilmer (1080p/2160p)
+            score: 100
+          - name: 4K (2160p) - Cutoff Remux
+            score: 100
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 100
+          - name: Standard (1080p/2160p)
+            score: 100
+      - trash_ids:
+          - 185f1dd7264c4562b9022d963ac37424 # DD+
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 110
+          - name: 1080p - Cutoff WEB-DL
+            score: 110
+          - name: Barnfilmer (1080p/2160p)
+            score: 110
+          - name: 4K (2160p) - Cutoff Remux
+            score: 110
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 110
+          - name: Standard (1080p/2160p)
+            score: 110
+      - trash_ids:
+          - 1af239278386be2919e1bcee0bde047e # DD+ ATMOS
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 120
+          - name: 1080p - Cutoff WEB-DL
+            score: 120
+          - name: Barnfilmer (1080p/2160p)
+            score: 120
+          - name: 4K (2160p) - Cutoff Remux
+            score: 120
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 120
+          - name: Standard (1080p/2160p)
+            score: 120
+      - trash_ids:
+          - e77382bcfeba57cb83744c9c5449b401 # 7.1 Surround
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 200
+          - name: 1080p - Cutoff WEB-DL
+            score: 200
+          - name: Barnfilmer (1080p/2160p)
+            score: 200
+          - name: 4K (2160p) - Cutoff Remux
+            score: 200
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 200
+          - name: Standard (1080p/2160p)
+            score: 200      
+      - trash_ids:
+          - 3cafb66171b47f226146a0770576870f # TrueHD
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 210
+          - name: 1080p - Cutoff WEB-DL
+            score: 210
+          - name: Barnfilmer (1080p/2160p)
+            score: 210
+          - name: 4K (2160p) - Cutoff Remux
+            score: 210
+          - name: 4K (2160p) - Cutoff WEB-DL
+            score: 210
+          - name: Standard (1080p/2160p)
+            score: 210
