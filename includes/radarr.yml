@@ -180,81 +180,114 @@ custom_formats:
 
   # Audio
   - trash_ids:
-      # Uncomment the next section to enable Advanced Audio Formats
-      - 496f355514737f7d83bf7aa4d24f8169 # TrueHD Atmos
+      - 496f355514737f7d83bf7aa4d24f8169 # TrueHD ATMOS
+    quality_profiles:
+      - name: Maximum
+        score: 5000
+      - name: Optimized
+        score: 5000
+      - name: HD Only
+        score: 5000
+
+  - trash_ids:
       - 2f22d89048b01681dde8afe203bf2e95 # DTS X
+    quality_profiles:
+      - name: Maximum
+        score: 4500
+      - name: Optimized
+        score: 4500
+      - name: HD Only
+        score: 4500
+
+  - trash_ids:
       - 417804f7f2c4308c1f4c5d380d4c4475 # ATMOS (undefined)
+    quality_profiles:
+      - name: Maximum
+        score: 4000
+      - name: Optimized
+        score: 4000
+      - name: HD Only
+        score: 4000
+
+  - trash_ids:
       - 1af239278386be2919e1bcee0bde047e # DD+ ATMOS
+    quality_profiles:
+      - name: Maximum
+        score: 3000
+      - name: Optimized
+        score: 3000
+      - name: HD Only
+        score: 3000
+
+  - trash_ids:
       - 3cafb66171b47f226146a0770576870f # TrueHD
+    quality_profiles:
+      - name: Maximum
+        score: 2750
+      - name: Optimized
+        score: 2750
+      - name: HD Only
+        score: 2750
+
+  - trash_ids:
       - dcf3ec6938fa32445f590a4da84256cd # DTS-HD MA
-      - a570d4a0e56a2874b64e5bfa55202a1b # FLAC
-      - e7c2fcae07cbada050a0af3357491d7b # PCM
+    quality_profiles:
+      - name: Maximum
+        score: 2500
+      - name: Optimized
+        score: 2500
+      - name: HD Only
+        score: 2500
+
+  - trash_ids:
       - 8e109e50e0a0b83a5098b056e13bf6db # DTS-HD HRA
+    quality_profiles:
+      - name: Maximum
+        score: 2000
+      - name: Optimized
+        score: 2000
+      - name: HD Only
+        score: 2000
+
+  - trash_ids:
       - 185f1dd7264c4562b9022d963ac37424 # DD+
+    quality_profiles:
+      - name: Maximum
+        score: 1750
+      - name: Optimized
+        score: 1750
+      - name: HD Only
+        score: 1750
+
+  - trash_ids:
       - f9f847ac70a0af62ea4a08280b859636 # DTS-ES
+    quality_profiles:
+      - name: Maximum
+        score: 1500
+      - name: Optimized
+        score: 1500
+      - name: HD Only
+        score: 1500
+
+  - trash_ids:
       - 1c1a4c5e823891c75bc50380a6866f73 # DTS
-      - 240770601cc226190c367ef59aba7463 # AAC
+    quality_profiles:
+      - name: Maximum
+        score: 1250
+      - name: Optimized
+        score: 1250
+      - name: HD Only
+        score: 1250
+
+  - trash_ids:
       - c2998bd0d90ed5621d8df281e839436e # DD
     quality_profiles:
       - name: Maximum
-
-  - trash_ids:
-      # Uncomment the next section to enable Advanced Audio Formats
-      - 2f22d89048b01681dde8afe203bf2e95 # DTS X
-      - 417804f7f2c4308c1f4c5d380d4c4475 # ATMOS (undefined)
-      - 1af239278386be2919e1bcee0bde047e # DD+ ATMOS
-      - a570d4a0e56a2874b64e5bfa55202a1b # FLAC
-      - e7c2fcae07cbada050a0af3357491d7b # PCM
-      - 185f1dd7264c4562b9022d963ac37424 # DD+
-      - f9f847ac70a0af62ea4a08280b859636 # DTS-ES
-      - 1c1a4c5e823891c75bc50380a6866f73 # DTS
-      - 240770601cc226190c367ef59aba7463 # AAC
-      - c2998bd0d90ed5621d8df281e839436e # DD
-    quality_profiles:
+        score: 750
       - name: Optimized
+        score: 750
       - name: HD Only
-
-  - trash_ids:
-      # The default scores for these are -10000, which is excessive
-      - 496f355514737f7d83bf7aa4d24f8169 # TrueHD Atmos
-      - 3cafb66171b47f226146a0770576870f # TrueHD
-      - dcf3ec6938fa32445f590a4da84256cd # DTS-HD MA
-      - 8e109e50e0a0b83a5098b056e13bf6db # DTS-HD HRA
-    quality_profiles:
-      - name: Optimized
-        score: -100
-      - name: HD Only
-        score: -100
-
-  - trash_ids:
-      # Advanced Audio Formats for Sonos Arc
-      - 1af239278386be2919e1bcee0bde047e # DD+ ATMOS
-      - 417804f7f2c4308c1f4c5d380d4c4475 # ATMOS (undefined)
-      - 185f1dd7264c4562b9022d963ac37424 # DD+
-      - c2998bd0d90ed5621d8df281e839436e # DD
-    quality_profiles:
-      - name: Maximum
-        score: 1000
-      - name: Optimized
-        score: 1000
-      - name: HD Only
-        score: 1000
-
-  - trash_ids:
-      - 496f355514737f7d83bf7aa4d24f8169 # TrueHD Atmos
-      - 2f22d89048b01681dde8afe203bf2e95 # DTS X
-      - 3cafb66171b47f226146a0770576870f # TrueHD
-      - dcf3ec6938fa32445f590a4da84256cd # DTS-HD MA
-      - 8e109e50e0a0b83a5098b056e13bf6db # DTS-HD HRA
-      - f9f847ac70a0af62ea4a08280b859636 # DTS-ES
-      - 1c1a4c5e823891c75bc50380a6866f73 # DTS
-    quality_profiles:
-      - name: Maximum
-        score: -100
-      - name: Optimized
-        score: -100
-      - name: HD Only
-        score: -100
+        score: 750
 
 
   # Release Groups Tiers
