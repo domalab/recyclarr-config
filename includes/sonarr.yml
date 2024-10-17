@@ -226,7 +226,7 @@ custom_formats:
       - 58790d4e2fdcd9733aa7ae68ba2bb503 # WEB Tier 02
       - d84935abd3f8556dcd51d4f27e22d0a6 # WEB Tier 03
       - d0c516558625b04b363fa6c5c2c7cfd4 # WEB Scene
-    quality_profiles:
+    assign_scores_to:
       - name: Maximum
       - name: Optimized
       - name: HD Only
@@ -237,7 +237,7 @@ custom_formats:
       - 2b239ed870daba8126a53bd5dc8dc1c8 # DV HDR10Plus
       - 7878c33f1963fefb3d6c8657d46c2f0a # DV HDR10
 
-    quality_profiles:
+    assign_scores_to:
       - name: Maximum
         score: 1600
       - name: Optimized
@@ -259,7 +259,7 @@ custom_formats:
       # Optional UHD
       - 2016d1676f5ee13a5b7257ff86ac9a93 # SDR
 
-    quality_profiles:
+    assign_scores_to:
       - name: Maximum
         score: 1500
       - name: Optimized
@@ -271,11 +271,12 @@ custom_formats:
       - ec8fa7296b64e8cd390a1600981f3923 # Repack / Proper
       - eb3d5cc0a2be0db205fb823640db6a3c # Repack2 / Proper2
       - 44e7c4de10ae50265753082e5dc76047 # Repack2 / Proper2
-    quality_profiles:
+    assign_scores_to:
       - name: Maximum
       - name: Optimized
       - name: HD Only
       - name: Anime
+
 
   # Scores from TRaSH json
   - trash_ids:
@@ -283,7 +284,7 @@ custom_formats:
       - e6258996055b9fbab7e9cb2f75819294 # WEB Tier 01
       - 58790d4e2fdcd9733aa7ae68ba2bb503 # WEB Tier 02
       - d84935abd3f8556dcd51d4f27e22d0a6 # WEB Tier 03
-    quality_profiles:
+    assign_scores_to:
       - name: Maximum
       - name: Optimized
 
@@ -291,7 +292,7 @@ custom_formats:
       # Main Guide Remux Tier Scoring
       - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01
       - 8a1d0c3d7497e741736761a1da866a2e # Remux Tier 02
-    quality_profiles:
+    assign_scores_to:
       - name: Maximum
 
   - trash_ids:
@@ -334,5 +335,5 @@ custom_formats:
       - 570b03b3145a25011bf073274a407259 # HIDIVE
       - a370d974bc7b80374de1d9ba7519760b # ABEMA
 
-    quality_profiles:
+    assign_scores_to:
       - name: Anime
