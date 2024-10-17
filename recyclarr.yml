@@ -1,8 +1,8 @@
 # Configuration specific to Sonarr
 sonarr:
   sonarr-unraid:
-    base_url: !secret sonarr_unraid_url
-    api_key: !secret sonarr_unraid_apikey
+    base_url: !secret sonarr_url
+    api_key: !secret sonarr_apikey
     include:
     - template: sonarr-quality-definition-series  
     - template: sonarr-quality-definition-anime
@@ -11,8 +11,8 @@ sonarr:
 # Configuration specific to Radarr.
 radarr:
   radarr-unraid:
-    base_url: !secret radarr_unraid_url
-    api_key: !secret radarr_unraid_apikey
+    base_url: !secret radarr_url
+    api_key: !secret radarr_apikey
     include:
     - template: radarr-quality-definition-movie
     - config: radarr.yml
