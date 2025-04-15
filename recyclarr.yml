@@ -4,8 +4,7 @@ sonarr:
     base_url: !secret sonarr_url
     api_key: !secret sonarr_apikey
     include:
-    - template: sonarr-quality-definition-series  
-    - template: sonarr-quality-definition-anime
+    - template: sonarr-quality-definition-series
     - config: sonarr.yml
 
 # Configuration specific to Radarr.
