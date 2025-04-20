@@ -63,6 +63,24 @@ quality_profiles:
           - WEBRip-1080p
           - WEBDL-1080p
 
+  - name: Streaming-4K
+    reset_unmatched_scores:
+      enabled: true
+    upgrade:
+      allowed: true
+      until_quality: Web 2160p
+    min_format_score: 0
+    score_set: sqp-1-2160p
+    qualities:
+      - name: Web 2160p
+        qualities:
+          - WEBRip-2160p
+          - WEBDL-2160p
+      - name: Bluray-2160p
+        enabled: false
+      - name: Remux-2160p
+        enabled: false
+
 custom_formats:
   # Movie Versions
   - trash_ids:
@@ -80,6 +98,7 @@ custom_formats:
       - name: Maximum
       - name: Optimized
       - name: HD Only
+      - name: Streaming-4K
 
   # Audio
   - trash_ids:
@@ -91,16 +110,18 @@ custom_formats:
         score: 5000
       - name: HD Only
         score: 5000
+      - name: Streaming-4K
+        score: 5000
 
   - trash_ids:
       - 496f355514737f7d83bf7aa4d24f8169 # TrueHD ATMOS
     assign_scores_to:
       - name: Maximum
-        score: 4000
+        score: -1000
       - name: Optimized
-        score: 4000
+        score: -1000
       - name: HD Only
-        score: 4000
+        score: -1000
 
   - trash_ids:
       - 2f22d89048b01681dde8afe203bf2e95 # DTS X
@@ -161,6 +182,8 @@ custom_formats:
         score: 1750
       - name: HD Only
         score: 1750
+      - name: Streaming-4K
+        score: 1750
 
   - trash_ids:
       - f9f847ac70a0af62ea4a08280b859636 # DTS-ES
@@ -191,6 +214,8 @@ custom_formats:
         score: 750
       - name: HD Only
         score: 750
+      - name: Streaming-4K
+        score: 750
 
   # Release Groups Tiers
   - trash_ids:
@@ -207,6 +232,7 @@ custom_formats:
       - name: Maximum
       - name: Optimized
       - name: HD Only
+      - name: Streaming-4K
 
   # Remux Tiers
   - trash_ids:
@@ -224,6 +250,7 @@ custom_formats:
       - name: Maximum
       - name: Optimized
       - name: HD Only
+      - name: Streaming-4K
 
   # Unwanted
   - trash_ids:
@@ -238,6 +265,7 @@ custom_formats:
       - name: Maximum
       - name: Optimized
       - name: HD Only
+      - name: Streaming-4K
 
   # Prefer DV+HDR
   - trash_ids:
@@ -261,6 +289,8 @@ custom_formats:
         score: 1500
       - name: Optimized
         score: 1500
+      - name: Streaming-4K
+        score: 1500
 
   # Censorship
   - trash_ids:
@@ -271,4 +301,6 @@ custom_formats:
       - name: Optimized
         score: 10
       - name: HD Only
+        score: 10
+      - name: Streaming-4K
         score: 10
