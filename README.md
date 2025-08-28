@@ -25,13 +25,10 @@ This configuration is designed to automate the process of acquiring high-quality
 
 ## Quality Profiles
 
-Both Sonarr and Radarr use three main quality profiles:
+Both Sonarr and Radarr use two main quality profiles:
 
-1. **Maximum**: Highest quality, preferring remux and full Blu-ray rips
-2. **Optimized**: High quality, balancing size and quality
-3. **HD Only**: Focuses on 1080p content
-
-Sonarr has an additional **Anime** profile for anime content.
+1. **Sonos-Optimized**: High quality 4K content and optimized for Sonos Arc
+3. **HD Only**: Focuses on 1080p content and optimized for Sonos Arc
 
 ## Custom Formats
 
@@ -50,7 +47,7 @@ The audio configuration is optimized for the Sonos Arc sound system, prioritizin
 2. Dolby Digital Plus (DD+)
 3. Dolby Digital (DD)
 
-Other formats like DTS and TrueHD are de-prioritized but still allowed if no better option is available.
+Other formats like DTS and TrueHD are de-prioritized
 
 ## Recyclarr Integration
 
