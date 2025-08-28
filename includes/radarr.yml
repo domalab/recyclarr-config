@@ -49,14 +49,14 @@ quality_profiles:
           - WEBDL-1080p
 
 custom_formats:
-  # PREFERRED AUDIO FORMATS FOR SONOS ARC + APPLE TV 4K
+# PREFERRED AUDIO FORMATS FOR SONOS ARC + APPLE TV 4K
   - trash_ids:
       - 1af239278386be2919e1bcee0bde047e # DD+ ATMOS
     assign_scores_to:
       - name: Sonos-Optimized
         score: 8000
       - name: HD Only
-        score: 5000
+        score: 8000
 
   - trash_ids:
       - 185f1dd7264c4562b9022d963ac37424 # DD+
@@ -64,7 +64,7 @@ custom_formats:
       - name: Sonos-Optimized
         score: 6000
       - name: HD Only
-        score: 1750
+        score: 6000
 
   - trash_ids:
       - c2998bd0d90ed5621d8df281e839436e # DD
@@ -72,7 +72,7 @@ custom_formats:
       - name: Sonos-Optimized
         score: 4000
       - name: HD Only
-        score: 750
+        score: 4000
 
   - trash_ids:
       - 417804f7f2c4308c1f4c5d380d4c4475 # ATMOS (undefined)
@@ -80,16 +80,16 @@ custom_formats:
       - name: Sonos-Optimized
         score: -5000  # Block ambiguous ATMOS
       - name: HD Only
-        score: 3000
+        score: -5000  # Block ambiguous ATMOS
 
-  # INCOMPATIBLE AUDIO FORMATS - BLOCK THESE FOR SONOS/APPLE TV
+# INCOMPATIBLE AUDIO FORMATS - BLOCK THESE FOR SONOS/APPLE TV
   - trash_ids:
       - 496f355514737f7d83bf7aa4d24f8169 # TrueHD ATMOS
     assign_scores_to:
       - name: Sonos-Optimized
         score: -10000  # BLOCK completely
       - name: HD Only
-        score: -1000
+        score: -10000  # BLOCK completely
 
   - trash_ids:
       - 3cafb66171b47f226146a0770576870f # TrueHD
@@ -97,7 +97,7 @@ custom_formats:
       - name: Sonos-Optimized
         score: -8000   # BLOCK completely
       - name: HD Only
-        score: 2750
+        score: -8000   # BLOCK completely
 
   - trash_ids:
       - 2f22d89048b01681dde8afe203bf2e95 # DTS X
@@ -105,7 +105,7 @@ custom_formats:
       - name: Sonos-Optimized
         score: -10000  # BLOCK completely
       - name: HD Only
-        score: 3500
+        score: -10000  # BLOCK completely
 
   - trash_ids:
       - dcf3ec6938fa32445f590a4da84256cd # DTS-HD MA
@@ -113,7 +113,7 @@ custom_formats:
       - name: Sonos-Optimized
         score: -8000   # BLOCK completely
       - name: HD Only
-        score: 2500
+        score: -8000   # BLOCK completely
 
   - trash_ids:
       - 8e109e50e0a0b83a5098b056e13bf6db # DTS-HD HRA
@@ -121,7 +121,7 @@ custom_formats:
       - name: Sonos-Optimized
         score: -8000   # BLOCK completely
       - name: HD Only
-        score: 2000
+        score: -8000   # BLOCK completely
 
   - trash_ids:
       - f9f847ac70a0af62ea4a08280b859636 # DTS-ES
@@ -129,7 +129,7 @@ custom_formats:
       - name: Sonos-Optimized
         score: -8000   # BLOCK completely
       - name: HD Only
-        score: 1500
+        score: -8000   # BLOCK completely
 
   - trash_ids:
       - 1c1a4c5e823891c75bc50380a6866f73 # DTS
@@ -137,7 +137,7 @@ custom_formats:
       - name: Sonos-Optimized
         score: -8000   # BLOCK completely
       - name: HD Only
-        score: 1250
+        score: -8000   # BLOCK completely
 
   # PREMIUM VIDEO FORMATS FOR YOUR 4K DOLBY VISION TV
   - trash_ids:
