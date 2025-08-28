@@ -19,38 +19,54 @@ This configuration is designed to automate the process of acquiring high-quality
 
 ## Files
 
-- `sonarr.yml`: Configuration file for Sonarr (TV shows)
-- `radarr.yml`: Configuration file for Radarr (movies)
-- `recyclarr.yml`: Configuration file for Recyclarr, which syncs settings with Sonarr and Radarr
+- `recyclarr.yml`: Main Recyclarr configuration file that orchestrates the sync process
+- `includes/sonarr.yml`: Sonarr-specific configuration file for TV shows
+- `includes/radarr.yml`: Radarr-specific configuration file for movies
 
 ## Quality Profiles
 
-Both Sonarr and Radarr use three main quality profiles:
+Both Sonarr and Radarr use two main quality profiles:
 
-1. **Maximum**: Highest quality, preferring remux and full Blu-ray rips
-2. **Optimized**: High quality, balancing size and quality
-3. **HD Only**: Focuses on 1080p content
-
-Sonarr has an additional **Anime** profile for anime content.
+1. **Sonos-Optimized**: Optimized for Sonos Arc + Apple TV 4K compatibility, supporting up to 4K with Dolby Vision/HDR, while prioritizing audio formats compatible with Sonos Arc (DD+ ATMOS, DD+, DD) and blocking incompatible formats (TrueHD, DTS)
+2. **HD Only**: Focuses on 1080p content only, with broader audio format support including TrueHD and DTS
 
 ## Custom Formats
 
-Custom formats are used to fine-tune media selection. Key categories include:
+Custom formats are used to fine-tune media selection based on TRaSH Guides. Key categories include:
 
-- HDR and Dolby Vision preferences
-- Release group tiers
-- Unwanted formats (e.g., 3D, BR-DISK)
-- Repack/Proper handling
+### Audio Formats
+- **Preferred for Sonos Arc**: DD+ ATMOS (8000 pts), DD+ (6000 pts), DD (4000 pts)
+- **Blocked for Sonos Arc**: TrueHD ATMOS, TrueHD, DTS-X, DTS-HD MA, DTS variants
+- **HD Only Profile**: Supports all audio formats with appropriate scoring
+
+### Video Quality
+- **4K/HDR Optimization**: Dolby Vision HDR10/HDR10+ (2500 pts), other DV variants (2200 pts), HDR formats (2000 pts)
+- **Resolution Preferences**: 4K (1800 pts), 1080p (800-1500 pts depending on profile)
+
+### Release Quality
+- **Premium Sources**: Top-tier release groups (1500 pts)
+- **Streaming Services**: Major platforms like Netflix, Amazon Prime, Apple TV+ (100 pts)
+- **Release Types**: Repacks/Proper releases (500 pts), special editions and remasters
+
+### Blocked Content
+- Poor quality releases (x265 HD, LQ releases, BR-DISK, extras) (-1000 pts)
 
 ## Audio Configuration
 
-The audio configuration is optimized for the Sonos Arc sound system, prioritizing:
+The audio configuration is specifically optimized for the Sonos Arc + Apple TV 4K setup:
 
-1. Dolby Atmos (DD+ ATMOS)
-2. Dolby Digital Plus (DD+)
-3. Dolby Digital (DD)
+### Sonos-Optimized Profile
+1. **DD+ ATMOS** (8000 pts) - Highest priority, native Sonos Arc support
+2. **DD+** (6000 pts) - Excellent quality, widely supported
+3. **DD** (4000 pts) - Good fallback option
+4. **Blocked Formats**: TrueHD ATMOS (-10000 pts), TrueHD (-8000 pts), DTS-X (-10000 pts), DTS variants (-8000 pts)
 
-Other formats like DTS and TrueHD are de-prioritized but still allowed if no better option is available.
+### HD Only Profile
+- Supports all audio formats including TrueHD and DTS
+- DD+ ATMOS (5000 pts), DD+ (1750 pts), DD (750 pts)
+- TrueHD and DTS formats receive positive scores for this profile
+
+The scoring system ensures that the Sonos-Optimized profile will completely avoid audio formats that cannot be properly processed by the Sonos Arc, while the HD Only profile maintains compatibility with a broader range of audio equipment.
 
 ## Recyclarr Integration
 
@@ -62,7 +78,8 @@ To keep your configuration up-to-date:
 
 1. Regularly run Recyclarr to sync the latest settings from TRaSH Guides
 2. Periodically check TRaSH Guides for new recommendations or changes
-3. Update your `sonarr.yml` and `radarr.yml` files if new custom formats or quality profiles are introduced
+3. Update your `includes/sonarr.yml` and `includes/radarr.yml` files if new custom formats or quality profiles are introduced
+4. Monitor your media acquisitions to ensure the scoring is working as intended for your Sonos Arc setup
 
 ## Troubleshooting
 
