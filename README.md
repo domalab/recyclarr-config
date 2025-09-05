@@ -27,7 +27,7 @@ This configuration is designed to automate the process of acquiring high-quality
 
 Both Sonarr and Radarr use two main quality profiles:
 
-1. **Sonos-Optimized**: High quality 4K content and optimized for Sonos Arc
+1. **AppleTV-Optimized**: High quality 4K content and optimized for Sonos Arc
 3. **HD Only**: Focuses on 1080p content and optimized for Sonos Arc
 
 ## Custom Formats
