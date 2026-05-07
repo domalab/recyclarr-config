@@ -4,7 +4,6 @@ sonarr:
     base_url: !secret sonarr_url
     api_key: !secret sonarr_apikey
     include:
-    - template: sonarr-quality-definition-series
     - config: sonarr.yml
 
 # Configuration specific to Radarr.
@@ -13,5 +12,4 @@ radarr:
     base_url: !secret radarr_url
     api_key: !secret radarr_apikey
     include:
-    - template: radarr-quality-definition-movie
     - config: radarr.yml

@@ -191,6 +191,14 @@ custom_formats:
 
   # HDR FORMATS (Sonarr IDs)
   - trash_ids:
+      - 505d871304820ba7106b693be6fe4a9e # HDR (current)
+    assign_scores_to:
+      - name: AppleTV-Optimized
+        score: 2000  # High video priority
+      - name: HD Only
+        score: 1000
+
+  - trash_ids:
       - 7c3a61a9c6cb04f52f1544be6d44a026 # DV Boost (current)
     assign_scores_to:
       - name: AppleTV-Optimized
